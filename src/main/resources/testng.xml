@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="Pixel">
+        <parameter name="deviceName" value="Pixe_Phone"/>
+        <parameter name="udid" value="emulator-5554"/>
+        <classes>
+            <class name="tests.AppiumTest"/>
+        </classes>
+    </test>
+    <test name="Nexus">
+        <parameter name="deviceName" value="Nexus_Tablet"/>
+        <parameter name="udid" value="emulator-5556"/>
+        <classes>
+            <class name="tests.AppiumTest"/>
+        </classes>
+    </test>
+</suite>
