@@ -9,16 +9,8 @@ import static org.testng.AssertJUnit.assertEquals;
 /**
  * The type Calculator page.
  */
+@SuppressWarnings("PMD.BeanMembersShouldSerialize")
 public class CalculatorPage extends PageObject {
-
-    /**
-     * Instantiates a new Calculator page.
-     *
-     * @param driver the driver
-     */
-    public CalculatorPage(final AndroidDriver<AndroidElement> driver) {
-        super(driver);
-    }
 
     /**
      * FindBy numberNine.
@@ -49,6 +41,16 @@ public class CalculatorPage extends PageObject {
      */
     @AndroidFindBy(id = "com.android.calculator2:id/result")
     private AndroidElement resultForm;
+
+    /**
+     * Instantiates a new Calculator page.
+     *
+     * @param driver the driver
+     */
+    public CalculatorPage(final AndroidDriver<AndroidElement> driver) {
+        super(driver);
+    }
+
 
     /**
      * Add numbers calculator page.

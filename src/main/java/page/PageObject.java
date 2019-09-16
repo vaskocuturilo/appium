@@ -16,10 +16,10 @@ public class PageObject extends BaseClass {
     /**
      * Instantiates a new Page object.
      *
-     * @param elementAndroidDriver the element android driver
+     * @param androidDriver the element android driver
      */
-    public PageObject(final AndroidDriver<AndroidElement> elementAndroidDriver) {
-
-        PageFactory.initElements(new AppiumFieldDecorator(elementAndroidDriver), this);
+    public PageObject(final AndroidDriver<AndroidElement> androidDriver) {
+        super();
+        PageFactory.initElements(new AppiumFieldDecorator(androidDriver), this);
     }
 }

@@ -22,7 +22,7 @@ public class BaseClass {
     /**
      * The Driver.
      */
-    private AndroidDriver<AndroidElement> driver;
+    private transient AndroidDriver<AndroidElement> driver;
 
     /**
      * The default constructor.
