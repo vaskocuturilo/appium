@@ -21,7 +21,7 @@ public class Waiters extends PageObject {
      */
     private WebDriverWait webDriverWait;
 
-    public Waiters(AndroidDriver<AndroidElement> driver) {
+    public Waiters(AndroidDriver<WebElement> driver) {
         super(driver);
         webDriverWait = new WebDriverWait(driver, 10);
     }

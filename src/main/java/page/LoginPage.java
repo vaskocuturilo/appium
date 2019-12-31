@@ -4,6 +4,7 @@ import com.sun.istack.internal.NotNull;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import utils.Waiters;
 
@@ -39,7 +40,7 @@ public class LoginPage extends PageObject {
 
     private static final String PASSWORD = "qwerty123456";
 
-    public LoginPage(AndroidDriver<AndroidElement> driver) {
+    public LoginPage(AndroidDriver<WebElement> driver) {
         super(driver);
     }
 

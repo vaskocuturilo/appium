@@ -1,8 +1,8 @@
 package base;
 
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
@@ -13,14 +13,14 @@ import static utils.PropertiesReader.loadProperty;
 
 
 /**
- * The type Base class.
+ * The class BaseClass.
  */
 public class BaseClass {
 
     /**
      * The Driver.
      */
-    private transient AndroidDriver<AndroidElement> driver;
+    private transient AndroidDriver<WebElement> driver;
 
     /**
      * The default constructor.
@@ -36,7 +36,7 @@ public class BaseClass {
      *
      * @return driver.
      */
-    public AndroidDriver<AndroidElement> getDriver() {
+    public AndroidDriver<WebElement> getDriver() {
         return driver;
     }
 
@@ -60,7 +60,7 @@ public class BaseClass {
         capabilities.setCapability("appActivity", "com.sebbia.delivery.ui.orders.OrdersActivity");
 
         try {
-            driver = new AndroidDriver<AndroidElement>(new URL(loadProperty("URL")), capabilities);
+            driver = new AndroidDriver<WebElement>(new URL(loadProperty("URL")), capabilities);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
 
