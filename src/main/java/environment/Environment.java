@@ -12,8 +12,8 @@ public class Environment {
      *
      * @return the boolean.
      */
-    public boolean isCheckOperationSystem() {
+    public static boolean isCheckOperationSystem() {
         String operationSystem = System.getProperty("os.name");
-        return ("nix".equalsIgnoreCase(operationSystem) || "nux".equalsIgnoreCase(operationSystem));
+        return ("win".contains(operationSystem) || ("dows").contains(operationSystem));
     }
 }

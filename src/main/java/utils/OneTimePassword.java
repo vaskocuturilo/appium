@@ -11,7 +11,7 @@ import page.PageObject;
  */
 public class OneTimePassword extends PageObject {
 
-    @AndroidFindBy(xpath = "//*[contains(@text,'Your OTP is')]")
+    @AndroidFindBy(xpath = "//*[contains(@text,'Код:')]")
     private WebElement otpCode;
 
     /**
@@ -30,7 +30,7 @@ public class OneTimePassword extends PageObject {
      */
     public  OneTimePassword readOtpFromNotification() {
         driver.openNotifications();
-        String oneTimePassword = String.valueOf(otpCode.getText().split("is"));
+        String oneTimePassword = String.valueOf(otpCode.getText().split("[^\\d]+"));
         driver.navigate().back();
 
         return this;
