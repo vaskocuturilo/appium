@@ -4,9 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -42,6 +40,7 @@ public class BaseClass {
         return driver;
     }
 
+
     /**
      * Start.
      *
@@ -49,17 +48,16 @@ public class BaseClass {
      * @param udid       the udid
      */
     @Parameters({"deviceName", "udid"})
-    @BeforeTest(alwaysRun = true)
+    @BeforeTest()
     public void start(final String deviceName, final String udid) {
         final DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceName);
         capabilities.setCapability(MobileCapabilityType.UDID, udid);
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "7.1.1");
-        capabilities.setCapability("appPackage", "com.android.calculator2");
-        capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
-
+        capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "9.0.0");
+        capabilities.setCapability("appPackage", "com.sebbia.delivery");
+        capabilities.setCapability("appActivity", "com.sebbia.delivery.ui.orders.OrdersActivity");
 
         try {
             driver = new AndroidDriver<AndroidElement>(new URL(loadProperty("URL")), capabilities);

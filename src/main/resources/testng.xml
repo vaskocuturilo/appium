@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Pixel">
-        <parameter name="deviceName" value="Pixe_Phone"/>
+    <test name="Login">
+        <parameter name="deviceName" value="Pixel"/>
         <parameter name="udid" value="emulator-5554"/>
         <classes>
-            <class name="tests.AppiumTest"/>
+            <class name="login.LoginTest"/>
         </classes>
     </test>
-    <test name="Nexus">
-        <parameter name="deviceName" value="Nexus_Tablet"/>
-        <parameter name="udid" value="emulator-5556"/>
+    <test name="Register">
+        <parameter name="deviceName" value="Pixel"/>
+        <parameter name="udid" value="emulator-5554"/>
         <classes>
-            <class name="tests.AppiumTest"/>
+            <class name="register.RegisterTest"/>
         </classes>
     </test>
 </suite>
