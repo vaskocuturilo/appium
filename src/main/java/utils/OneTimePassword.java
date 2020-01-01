@@ -11,24 +11,27 @@ import page.PageObject;
  */
 public class OneTimePassword extends PageObject {
 
+    /**
+     * The findBy otpCode.
+     */
     @AndroidFindBy(xpath = "//*[contains(@text,'Код:')]")
     private WebElement otpCode;
 
     /**
-     * Instantiates a new One time password.
+     * The constructor.
      *
      * @param driver the driver
      */
-    public OneTimePassword(AndroidDriver<WebElement> driver) {
+    public OneTimePassword(final AndroidDriver<WebElement> driver) {
         super(driver);
     }
 
     /**
-     * Read otp from notification one time password.
+     * The method readOtpFromNotification.
      *
      * @return the one time password
      */
-    public  OneTimePassword readOtpFromNotification() {
+    public OneTimePassword readOtpFromNotification() {
         driver.openNotifications();
         String oneTimePassword = String.valueOf(otpCode.getText().split("[^\\d]+"));
         driver.navigate().back();

@@ -1,14 +1,15 @@
 package utils;
 
-import base.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import page.PageObject;
 
+/**
+ * The class Waiters.
+ */
 public class Waiters extends PageObject {
 
     /**
@@ -21,7 +22,12 @@ public class Waiters extends PageObject {
      */
     private WebDriverWait webDriverWait;
 
-    public Waiters(AndroidDriver<WebElement> driver) {
+    /**
+     * Instantiates a new Waiters.
+     *
+     * @param driver the driver
+     */
+    public Waiters(final AndroidDriver<WebElement> driver) {
         super(driver);
         webDriverWait = new WebDriverWait(driver, 10);
     }

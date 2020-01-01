@@ -3,7 +3,13 @@ package environment;
 /**
  * The class Environment.
  */
-public class Environment {
+public final class Environment {
+
+    /**
+     * The private constructor.
+     */
+    private Environment() {
+    }
 
     /**
      * Method isCheckOperatingSystem.

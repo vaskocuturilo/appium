@@ -8,6 +8,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
 
+
+/**
+ * The class Remote.
+ */
 public class Remote implements WebDriverProvider {
 
     /**
@@ -16,7 +20,7 @@ public class Remote implements WebDriverProvider {
     private static final Logger LOGGER = Logger.getLogger(Remote.class.getName());
 
     @Override
-    public WebDriver createDriver(DesiredCapabilities capabilities) {
+    public WebDriver createDriver(final DesiredCapabilities capabilities) {
         capabilities.setCapability("browserName", "android");
         capabilities.setCapability("version", "8.0");
         capabilities.setCapability("enableVNC", true);
@@ -30,6 +34,11 @@ public class Remote implements WebDriverProvider {
         return null;
     }
 
+    /**
+     * The method getSelenoidUrl.
+     *
+     * @return hostURL.
+     */
     private static URL getSelenoidUrl() {
         URL hostURL = null;
         try {

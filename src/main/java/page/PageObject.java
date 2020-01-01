@@ -2,21 +2,27 @@ package page;
 
 import base.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
 /**
- * The type Page object.
+ * The class Page object.
  */
 public class PageObject extends BaseClass {
+    /**
+     * The Driver.
+     */
     protected AndroidDriver driver;
 
-    public PageObject(AndroidDriver<WebElement> driver) {
-        this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+    /**
+     * Instantiates a new Page object.
+     *
+     * @param newDriver the driver
+     */
+    public PageObject(final AndroidDriver<WebElement> newDriver) {
+        this.driver = newDriver;
+        PageFactory.initElements(new AppiumFieldDecorator(newDriver), this);
     }
 }
