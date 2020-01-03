@@ -33,7 +33,7 @@ public class OneTimePassword extends PageObject {
      */
     public OneTimePassword readOtpFromNotification() {
         driver.openNotifications();
-        String oneTimePassword = String.valueOf(otpCode.getText().split("[^\\d]+"));
+        final String oneTimePassword = String.valueOf(otpCode.getText().split("[^\\d]+"));
         driver.navigate().back();
 
         return this;

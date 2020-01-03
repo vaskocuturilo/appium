@@ -57,16 +57,6 @@ public class LoginPage extends PageObject {
     private AndroidElement sigInButton;
 
     /**
-     * The constant SMS_WITH_CODE.
-     */
-    private static final String SMS_WITH_CODE = "Смс с кодом";
-
-    /**
-     * The constant NOT_CODE.
-     */
-    private static final String NOT_CODE = "Неправильный код";
-
-    /**
      * The constant PASSWORD.
      */
     private static final String PASSWORD = "qwerty123456";
@@ -100,11 +90,11 @@ public class LoginPage extends PageObject {
      * @return the login page.
      */
     public LoginPage checkAssertMessage() {
-        Waiters waiters = new Waiters(driver);
-        Assert.assertTrue(assertText.getText().contains(SMS_WITH_CODE));
+        final Waiters waiters = new Waiters(driver);
+        Assert.assertTrue(assertText.isDisplayed());
         waiters.waitForVisibilityOf(positiveButton).click();
         waiters.waitForVisibilityOf(sigInButton).click();
-        Assert.assertTrue(assertText.getText().contains(NOT_CODE));
+        Assert.assertTrue(assertText.isDisplayed());
         positiveButton.click();
         backButton.click();
 

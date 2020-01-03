@@ -15,7 +15,7 @@ public class Waiters extends PageObject {
     /**
      * The constant DELAY. This is delay for WebDriverWait is seconds.
      */
-    private static final int DELAY = 5;
+    private static final int DELAY = 10;
 
     /**
      * The private value webDriverWait.
@@ -29,7 +29,7 @@ public class Waiters extends PageObject {
      */
     public Waiters(final AndroidDriver<WebElement> driver) {
         super(driver);
-        webDriverWait = new WebDriverWait(driver, 10);
+        webDriverWait = new WebDriverWait(driver, DELAY);
     }
 
 

@@ -19,7 +19,7 @@ public final class Environment {
      * @return the boolean.
      */
     public static boolean isCheckOperationSystem() {
-        String operationSystem = System.getProperty("os.name");
-        return ("win".contains(operationSystem) || ("dows").contains(operationSystem));
+        final String operationSystem = System.getProperty("os.name");
+        return "win".contains(operationSystem) || "ows".contains(operationSystem);
     }
 }

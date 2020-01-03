@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Login">
-        <parameter name="deviceName" value="Pixel"/>
+    <test name="Tests">
+        <parameter name="deviceName" value="android"/>
         <parameter name="udid" value="emulator-5554"/>
         <classes>
             <class name="login.LoginTest"/>
-        </classes>
-    </test>
-    <test name="Register">
-        <parameter name="deviceName" value="Pixel"/>
-        <parameter name="udid" value="emulator-5554"/>
-        <classes>
             <class name="register.RegisterTest"/>
+            <class name="registeruser.RegisterUserTest"/>
         </classes>
     </test>
 </suite>

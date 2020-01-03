@@ -2,10 +2,9 @@ package base;
 
 import environment.Environment;
 import environment.Remote;
-import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.*;
 
@@ -21,9 +20,9 @@ import static utils.PropertiesReader.loadProperty;
 public class BaseClass {
 
     /**
-     * The Driver.
+     * The AppiumDriver.
      */
-    private transient AndroidDriver<WebElement> driver;
+    private AppiumDriver driver;
 
     /**
      * The Remote Driver.
@@ -39,12 +38,13 @@ public class BaseClass {
         return;
     }
 
+
     /**
      * The getter.
      *
-     * @return driver.
+     * @return the driver
      */
-    public AndroidDriver<WebElement> getDriver() {
+    public AppiumDriver getDriver() {
         return driver;
     }
 
@@ -55,7 +55,7 @@ public class BaseClass {
      * @param udid       the udid
      */
     @Parameters({"deviceName", "udid"})
-    @BeforeTest()
+    @BeforeClass()
     public void start(final String deviceName, final String udid) {
         final DesiredCapabilities capabilities = new DesiredCapabilities();
         final Remote remote = new Remote();
@@ -70,19 +70,19 @@ public class BaseClass {
             capabilities.setCapability("appPackage", "com.sebbia.delivery");
             capabilities.setCapability("appActivity", "com.sebbia.delivery.ui.orders.OrdersActivity");
             try {
-                driver = new AndroidDriver<WebElement>(new URL(loadProperty("URL")), capabilities);
+                driver = new AppiumDriverFactory().getDriver(deviceName, new URL(loadProperty("URL")), capabilities);
+
             } catch (MalformedURLException e) {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
 
     /**
      * The method stop.
      */
-    @AfterTest(alwaysRun = true)
+    @AfterClass(alwaysRun = true)
     public void stop() {
         if (driver != null) {
             driver.quit();

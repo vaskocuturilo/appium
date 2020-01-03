@@ -1,7 +1,5 @@
 package utils;
 
-import com.sun.istack.internal.NotNull;
-
 import java.text.DecimalFormat;
 import java.util.Random;
 
@@ -26,12 +24,11 @@ public final class Code {
      *
      * @return the string
      */
-    @NotNull
     public static String createCode() {
-        Random rand = new Random();
-        int number = rand.nextInt(NUMBER);
-        DecimalFormat decimalFormat = new DecimalFormat("0000");
-        String code = decimalFormat.format(number);
+        final Random rand = new Random();
+        final int number = rand.nextInt(NUMBER);
+        final DecimalFormat decimalFormat = new DecimalFormat("0000");
+        final String code = decimalFormat.format(number);
 
         return code;
     }

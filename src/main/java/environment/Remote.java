@@ -22,7 +22,7 @@ public class Remote implements WebDriverProvider {
     @Override
     public WebDriver createDriver(final DesiredCapabilities capabilities) {
         capabilities.setCapability("browserName", "android");
-        capabilities.setCapability("version", "8.0");
+        capabilities.setCapability("version", "8.1");
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("appPackage", "com.android.calculator2");
         capabilities.setCapability("appActivity", "com.android.calculator2.Calculator");
@@ -42,7 +42,7 @@ public class Remote implements WebDriverProvider {
     private static URL getSelenoidUrl() {
         URL hostURL = null;
         try {
-            hostURL = new URL(System.getProperty("http://192.168.0.8:4444/wd/hub", "http://192.168.0.8:4444/wd/hub"));
+            hostURL = new URL(System.getProperty("http://192.168.0.9:4444/wd/hub", "http://192.168.0.9:4444/wd/hub"));
         } catch (MalformedURLException ex) {
             LOGGER.info("This is " + ex);
         }
